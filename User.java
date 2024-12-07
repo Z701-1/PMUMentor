@@ -25,8 +25,12 @@ public class User {
     }
 
     public void register() {
-        users.put(email, this);
-        System.out.println("User registered: " + name);
+        if (!users.containsKey(email)) {
+            users.put(email, this);
+            System.out.println("User registered: " + name);
+        } else {
+            System.out.println("User with this email already exists.");
+        }
     }
 
     public static User login(String email, String password) {
