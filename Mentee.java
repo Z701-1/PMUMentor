@@ -15,6 +15,10 @@
         }
 
         public void createEvent(String eventDetails) {
+            if (eventDetails == null || eventDetails.isEmpty()) {
+                System.out.println("Error: Event details cannot be null or empty.");
+                return;
+            }
             System.out.println("Event created with details: " + eventDetails);
+            }
         }
-    }
